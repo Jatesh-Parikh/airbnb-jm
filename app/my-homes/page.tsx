@@ -36,7 +36,7 @@ export default async function MyHomes() {
   const { getUser } = getKindeServerSession();
   const user = await getUser();
 
-  if (!user) redirect("/");
+  if (!user) return redirect("/");
   const data = await getData(user.id);
 
   return (
